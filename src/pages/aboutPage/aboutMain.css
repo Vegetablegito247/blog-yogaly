@@ -1,0 +1,29 @@
+.about_us {
+    width: 100%;
+    padding: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.about_img img {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.about_info h3 {
+    font-size: 30px;
+}
+
+@media (max-width: 768px) {
+    .about_us {
+        padding: 4rem 2rem;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .about_img img {
+        width: 100%;
+    }
+}

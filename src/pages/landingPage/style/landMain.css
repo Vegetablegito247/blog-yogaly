@@ -1,0 +1,153 @@
+.upcoming, .techniques {
+    width: 100%;
+    padding: 4rem;
+}
+
+.upcoming {
+    background-color: var(--secondaryColor);
+    color: #ffffff;
+}
+
+.upcoming_head {
+    font-size: 30px;
+    margin-bottom: 2rem;
+}
+
+.classes {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+    align-items: center;
+}
+
+.class {
+    position: relative;
+}
+
+.class img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.class h3 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.493);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.more_class {
+    margin-top: 1.5rem;
+}
+
+.more_class a, .tech_more a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    height: 45px;
+    border: none;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: var(--accentColor);
+    margin-top: 20px;
+}
+
+.techniques {
+    display: grid;
+    grid-template-columns: 9fr 3fr;
+    gap: 20px;
+    color: #ffffff;
+    background-color: var(--accentColor);
+}
+
+.tech_detail p {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.tech_more a {
+    background-color: var(--secondaryColor);
+}
+
+.newsletter {
+    width: 100%;
+    height: 500px;
+    background-image: url(../../../images/mountain2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.news_cont {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.433);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.newsletter_head {
+    text-align: center;
+}
+
+.newsletter_head h3 {
+    font-size: 30px;
+}
+
+.newsletter_form form, .news_inp {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.news_inp input {
+    width: 200px;
+    height: 45px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.news_btn button {
+    width: 130px;
+    height: 45px;
+    border: none;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: var(--secondaryColor);
+}
+
+@media (max-width: 767px) {
+    .newsletter_head {
+        padding: 0 2rem;
+    }
+    
+    .upcoming, .techniques {
+        padding: 4rem 2rem;
+    }
+
+    .classes, .techniques {
+        grid-template-columns: auto;
+    }
+
+    .newsletter_form form, .news_inp {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,9 @@
+.blog_blog button {
+    width: 130px;
+    height: 45px;
+    border: none;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: var(--secondaryColor);
+    margin-top: 20px;
+}

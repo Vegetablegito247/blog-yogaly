@@ -1,0 +1,42 @@
+.instructors {
+    width: 100%;
+    padding: 4rem;
+    display: grid;
+    gap: 30px;
+}
+
+.tutor {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.tut_img img {
+    width: 450px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.tut_info h3 {
+    font-size: 25px;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 767px) {
+    .instructors {
+        padding: 4rem 2rem;
+    }
+
+    .tutor {
+        flex-direction: column;
+    }
+
+    .tutor:last-child {
+        flex-direction: column-reverse;
+    }
+    
+    .tut_img img {
+        width: 100%;
+    }
+}
