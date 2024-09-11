@@ -28,7 +28,11 @@ const initialState = {
 const adminSlice = createSlice({
     name: 'Admin',
     initialState: initialState,
-    reducers: {},
+    reducers: {
+        logout: (state) => {
+            state.admin = [];
+        }
+    },
     extraReducers: (builder) => {
         builder
         .addCase(signup.pending, (state) => {
@@ -60,4 +64,5 @@ const adminSlice = createSlice({
     }
 });
 
+export const { logout } = adminSlice.actions;
 export default adminSlice.reducer;
