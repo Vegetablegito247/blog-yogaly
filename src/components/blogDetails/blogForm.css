@@ -1,0 +1,83 @@
+.blog_form {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.366);
+}
+
+.blog_form form {
+    width: 500px;
+    height: fit-content;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.closeFrm {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondaryColor);
+    color: #ffffff;
+    margin-bottom: 10px;
+    margin-left: auto;
+}
+
+.frm_inp {
+    display: grid;
+    gap: 10px;
+}
+
+.inp_ctrl input {
+    width: 100%;
+    height: 45px;
+    border: 2px solid var(--secondaryColor);
+    outline: none;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.err_msg {
+    font-size: 12px;
+    color: red;
+}
+
+.inp_ctrl textarea {
+    width: 100%;
+    height: 100px;
+    border: 2px solid var(--secondaryColor);
+    outline: none;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.frm_btn {
+    margin-top: 20px;
+}
+
+.frm_btn button {
+    width: 100%;
+    height: 45px;
+    border: none;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: var(--secondaryColor);
+}
+
+@media (max-width: 768px) {
+    .blog_form {
+        padding: 20px;
+    }
+
+    .blog_form form {
+        width: 100%;
+    }
+}

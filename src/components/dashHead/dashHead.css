@@ -1,0 +1,48 @@
+.dash_head {
+    width: 100%;
+    background-color: var(--secondaryColor);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    padding: 0 3rem;
+    color: var(--textAlt);
+}
+
+.dash_burger {
+    display: none;
+}
+
+.dash_logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.dash_icon {
+    font-size: 25px;
+}
+
+@media (max-width: 925px) {
+    .dash_burger {
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        border: 2px solid var(--textAlt);
+        color: var(--textAlt);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dash_logo {
+        display: none;
+    }
+}
+
+@media (max-width: 575px) {
+    .dash_head {
+        padding: 0 20px;
+    }
+}

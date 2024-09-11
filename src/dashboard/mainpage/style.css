@@ -1,0 +1,131 @@
+.displayBoard,
+.sideMenu,
+.mainMenu,
+.mainMenu a,
+.account,
+.acctSettings,
+.logout,
+.acctIcon,
+.sideIcon,
+.acctHolder {
+    display: flex;
+}
+
+.acctIcon,
+.sideIcon,
+.acctHolder {
+    align-items: center;
+}
+
+.account,
+.mainMenu {
+    padding: 20px 10px;
+}
+
+.sideMenu,
+.mainMenu,
+.account,
+.acctSettings {
+    flex-direction: column;
+}
+
+.mainMenu, .acctSettings {
+    row-gap: 15px;
+}
+
+.sideMenu {
+    width: 16vw;
+    height: 100vh;
+    background-color: var(--secondaryColor);
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.mainMenu a,
+.logout {
+    align-items: center;
+    column-gap: 10px;
+    text-decoration: none;
+    color: var(--textAlt);
+    line-height: 45px;
+    padding: 0 0 0 10px;
+    border-radius: 5px;
+    transition: ease .7s;
+    border: 2px solid var(--primaryColor);
+}
+
+.mainMenu a:hover,
+.logout:hover {
+    background-color: #0030678e;
+}
+
+.mainMenu a.active {
+    background-color: var(--primaryColor);
+    border: none;
+}
+
+.account {
+    margin-top: auto;
+}
+
+.acctHolder {
+    justify-content: start;
+    margin-bottom: 1rem;
+    color: rgb(180, 215, 255);
+    column-gap: 10px;
+    font-size: 12px;
+}
+
+.sideMenuCont {
+    display: none;
+}
+
+.outlet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 84vw;
+    height: fit-content;
+    margin-left: auto;
+}
+
+@media (max-width: 925px) {
+    .sideMenu {
+        position: fixed;
+        top: 0;
+        left: -100vw;
+        width: 70vw;
+        height: 100%;
+        z-index: 21;
+        transition: left .7s;
+    }
+
+    .sideMenu.active {
+        left: 0;
+    }
+
+    .displayBoard {
+        display: block;
+    }
+
+    .sideMenuCont {
+        display: flex;
+        position: fixed;
+        left: -100vw;
+        top: 0;
+        z-index: 20;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.378);
+    }
+
+    .sideMenuCont.active {
+        left: 0;
+    }
+
+    .outlet {
+        width: 100%;
+        height: fit-content;
+    }
+}

@@ -9,7 +9,7 @@ import class4 from '../images/class4.jpg';
 
 export const blogs = [
     {
-        id: 1,
+        _id: 1,
         title: 'The Benefits of Morning Yoga',
         author: 'Jane Doe',
         date: 'July 15, 2024',
@@ -18,7 +18,7 @@ export const blogs = [
         content: 'Morning yoga has numerous benefits, including increased energy levels, improved mental focus, and a positive start to your day. In this blog, we explore various morning yoga routines and tips to make the most out of your practice...'
     },
     {
-        id: 2,
+        _id: 2,
         title: 'Yoga for Stress Relief',
         author: 'John Smith',
         date: 'July 18, 2024',
@@ -27,7 +27,7 @@ export const blogs = [
         content: 'Stress is a common issue that many people face. Yoga offers a holistic approach to managing stress by promoting relaxation and mindfulness. This blog delves into specific yoga poses and techniques that can help alleviate stress and improve overall well-being...'
     },
     {
-        id: 3,
+        _id: 3,
         title: 'The Power of Breath: Pranayama Techniques',
         author: 'Emily Turner',
         date: 'July 20, 2024',
@@ -36,7 +36,7 @@ export const blogs = [
         content: 'Pranayama, or breath control, is a vital aspect of yoga that can greatly enhance your practice. In this blog, we discuss different pranayama techniques, their benefits, and how to incorporate them into your daily routine for better health and vitality...'
     },
     {
-        id: 4,
+        _id: 4,
         title: 'Yoga and Nutrition: A Holistic Approach',
         author: 'Sarah Lee',
         date: 'July 22, 2024',
@@ -48,7 +48,7 @@ export const blogs = [
 
 export const classes = [
     {
-        id: 1,
+        _id: 1,
         title: 'Beginner Yoga',
         instructor: 'Jane Doe',
         date: 'Every Monday, 7:00 AM',
@@ -57,7 +57,7 @@ export const classes = [
         description: 'Our Beginner Yoga class is designed to introduce newcomers to the fundamental poses, breathing techniques, and principles of yoga. With a focus on proper alignment and mindful movement, this class provides a supportive environment for you to start your yoga journey...'
     },
     {
-        id: 2,
+        _id: 2,
         title: 'Vinyasa Flow',
         instructor: 'John Smith',
         date: 'Every Wednesday, 6:00 PM',
@@ -66,7 +66,7 @@ export const classes = [
         description: 'Vinyasa Flow is a dynamic style of yoga that links breath with movement in a continuous flow of poses. This class will challenge your strength, flexibility, and endurance, while promoting mental focus and relaxation. Suitable for all levels, our Vinyasa Flow class encourages you to find your own rhythm and flow...'
     },
     {
-        id: 3,
+        _id: 3,
         title: 'Restorative Yoga',
         instructor: 'Emily Turner',
         date: 'Every Friday, 8:00 PM',
@@ -75,7 +75,7 @@ export const classes = [
         description: 'Restorative Yoga is a gentle practice that uses props to support the body in restful poses. This class is perfect for relieving stress, enhancing flexibility, and promoting deep relaxation. Each pose is held for an extended period, allowing you to fully relax and rejuvenate your mind and body...'
     },
     {
-        id: 4,
+        _id: 4,
         title: 'Power Yoga',
         instructor: 'Sarah Lee',
         date: 'Every Saturday, 10:00 AM',
