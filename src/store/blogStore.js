@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const fetchBlog = createAsyncThunk('blog/FetchBlog', async () => {
     try {
-        const response = await axios.get(`http://localhost:8000/getBlog`);
+        const response = await axios.get(`https://yogaly-server.vercel.app/getBlog`);
         return response.data;
     } catch (error) {
         throw error.response?.data.error;
@@ -12,7 +12,7 @@ export const fetchBlog = createAsyncThunk('blog/FetchBlog', async () => {
 
 export const fetchBlogView = createAsyncThunk('blog/fetchBlogView', async (id) => {
     try {
-        const response = await axios.get(`http://localhost:8000/getBlogView/${id}`);
+        const response = await axios.get(`https://yogaly-server.vercel.app/getBlogView/${id}`);
         return response.data;
     } catch (error) {
         throw error.response?.data.error;
@@ -23,7 +23,7 @@ export const postBlog = createAsyncThunk('blog/PostBlog', async (blogData, { get
     try {
         const { token } = getState().admin.admin;
 
-        const response = await axios.post(`http://localhost:8000/postBlog`, blogData, {
+        const response = await axios.post(`https://yogaly-server.vercel.app/postBlog`, blogData, {
             headers: {
                 Authorization: `Bearer ${token}`
             },
@@ -39,7 +39,7 @@ export const delBlog = createAsyncThunk('blog/DeleteBlog', async (blogId, { getS
     try {
         const { token } = getState().admin.admin;
 
-        const response = await axios.delete(`http://localhost:8000/deleteBlog/${blogId}`, {
+        const response = await axios.delete(`https://yogaly-server.vercel.app/deleteBlog/${blogId}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             },

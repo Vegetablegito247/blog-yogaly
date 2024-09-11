@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const fetchClass = createAsyncThunk('class/fetchClass', async () => {
     try {
-        const response = await axios.get(`http://localhost:8000/getClass`)
+        const response = await axios.get(`https://yogaly-server.vercel.app/getClass`)
         return response.data;
     } catch (error) {
         throw error.response?.data.error;
@@ -12,7 +12,7 @@ export const fetchClass = createAsyncThunk('class/fetchClass', async () => {
 
 export const fetchClassView = createAsyncThunk('class/fetchClassView', async (id) => {
     try {
-        const response = await axios.get(`http://localhost:8000/getClassView/${id}`);
+        const response = await axios.get(`https://yogaly-server.vercel.app/getClassView/${id}`);
         return response.data;
     } catch (error) {
         throw error.response?.data.error;
@@ -23,7 +23,7 @@ export const postClass = createAsyncThunk('class/postClass', async (classData, {
     try {
         const { token } = getState().admin.admin;
 
-        const response = axios.post(`http://localhost:8000/getClass`, classData, {
+        const response = axios.post(`https://yogaly-server.vercel.app/getClass`, classData, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
@@ -38,7 +38,7 @@ export const delClass = createAsyncThunk('class/delClass', async (classId, { get
     try {
         const { token } = getState().admin.admin;
 
-        const response = axios.delete(`http://localhost:8000/getClass/${classId}`, {
+        const response = axios.delete(`https://yogaly-server.vercel.app/getClass/${classId}`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },

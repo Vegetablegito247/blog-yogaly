@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const subscribe = createAsyncThunk('subscriber/subscribe', async (sub) => {
     try {
-        const response = await axios.post(`${process.env.API_URL}/subscribe`, sub);
+        const response = await axios.post(`https://yogaly-server.vercel.app/subscribe`, sub);
         return response.data;
     } catch (err) {
         return err;
