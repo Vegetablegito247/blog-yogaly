@@ -5,8 +5,8 @@ import { Outlet } from 'react-router-dom'
 function Blogs() {
   return (
     <div className="blog_dashboard">
-        <DashHead headTitle='Blogs' />
-        <Outlet />
+      <DashHead headTitle='Blogs' />
+      <Outlet />
     </div>
   )
 }

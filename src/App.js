@@ -11,6 +11,11 @@ import "react-toastify/dist/ReactToastify.css";
 import LogAdmin from "./adminForm/LogAdmin";
 import BlogView from "./components/blogDetails/BlogView";
 import ClassView from "./components/classDetails/ClassView";
+import Classes from "./dashboard/classPage";
+import Blogs from "./dashboard/blogPage";
+import Subscribers from "./dashboard/subscriberPage";
+import BlogDashMain from "./dashboard/blogPage/BlogDashMain";
+import ClassDashMain from "./dashboard/classPage/ClassDashMain";
 
 function App() {
   return (
@@ -28,6 +33,13 @@ function App() {
           </Route>
           <Route path="dashboard" element={<DisplayDashboard />}>
             <Route index element={<OverviewPage />} />
+            <Route path="class" element={<Classes />}>
+              <Route index element={<ClassDashMain />} />
+            </Route>
+            <Route path="blogs" element={<Blogs />}>
+              <Route index element={<BlogDashMain />} />
+            </Route>            
+            <Route path="subscribers" element={<Subscribers />} />
           </Route>
           <Route path="admin" element={<LogAdmin />} />
         </Routes>
