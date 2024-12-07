@@ -28,9 +28,7 @@ function App() {
           <Route path="/blog" element={<BlogPage />}>
             <Route path=":id" element={<BlogView />} />
           </Route>
-          <Route path="/classes" element={<ClassPage />}>
-            <Route path=':id' element={<ClassView />} />
-          </Route>
+          <Route path="/classes" element={<ClassPage />} />
           <Route path="dashboard" element={<DisplayDashboard />}>
             <Route index element={<OverviewPage />} />
             <Route path="class" element={<Classes />}>

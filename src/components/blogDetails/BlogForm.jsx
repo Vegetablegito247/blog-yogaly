@@ -60,8 +60,25 @@ function BlogForm() {
         e.preventDefault();
 
         if (validateForm()) {
-            dispatch(postBlog(blogData));
+            const formData = new FormData();
+
+            formData.append('title', blogData.title);
+            formData.append('summary', blogData.summary);
+            formData.append('content', blogData.content);
+            formData.append('author', blogData.author);
+            formData.append('image', blogData.image);
+
+            dispatch(postBlog(formData));
             dispatch(fetchBlog());
+
+            setBlogData({
+                title: '',
+                summary: '',
+                content: '',
+                author: '',
+                image: null
+            })
+
             dispatch(handleOpenBlogForm());
 
         }

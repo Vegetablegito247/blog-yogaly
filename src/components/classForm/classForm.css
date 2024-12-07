@@ -1,0 +1,75 @@
+.class_form {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.481);
+}
+
+.class_cont {
+    width: 400px;
+    height: fit-content;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+}
+
+.close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background-color: var(--secondaryColor);
+    color: white;
+    margin-left: auto;
+    margin-bottom: 10px;
+}
+
+.class_main {
+    display: grid;
+    gap: 20px;
+}
+
+.class_head h3 {
+    font-size: 25px;
+}
+
+.class_btn button {
+    width: 100%;
+    height: 45px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: var(--secondaryColor);
+    margin-top: 20px;
+}
+
+.emailInp {
+    margin-top: 16px;
+    width: 100%;
+}
+
+.emailInp input {
+    width: 100%;
+    height: 45px;
+    padding: 0 10px;
+    border: 2px solid var(--secondaryColor);
+    outline: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+
+}
+
+@media (max-width: 428px) {
+    .class_cont {
+        width: 100%;
+    }
+}

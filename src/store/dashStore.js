@@ -3,7 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     openBlogForm: false,
     openClassForm: false,
-    openSideMenu: false
+    openSideMenu: false,
+    openPayForm: false
 }
 
 const dashSlice = createSlice({
@@ -14,7 +15,6 @@ const dashSlice = createSlice({
             if (state.openClassForm || state.openSideMenu) {
                 state.openClassForm = false;
                 state.openSideMenu = false;
-                console.log(state.openBlogForm)
             }
             state.openBlogForm = !state.openBlogForm;
         },
@@ -24,6 +24,13 @@ const dashSlice = createSlice({
                 state.openSideMenu = false;
             }
             state.openClassForm = !state.openClassForm;
+        },
+        handleOpenPayForm: (state) => {
+            if (state.openPayForm || state.openSideMenu) {
+                state.openPayForm = false;
+                state.openSideMenu = false;
+            }
+            state.openPayForm = !state.openPayForm;
         },
         handleDashSide: (state) => {
             if (state.openBlogForm || state.openClassForm) {
@@ -35,5 +42,5 @@ const dashSlice = createSlice({
     }
 });
 
-export const { handleOpenBlogForm, handleOpenClassForm, handleDashSide } = dashSlice.actions
+export const { handleOpenBlogForm, handleOpenClassForm, handleDashSide, handleOpenPayForm } = dashSlice.actions
 export default dashSlice.reducer 

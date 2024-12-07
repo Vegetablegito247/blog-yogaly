@@ -4,9 +4,13 @@ import { Link } from 'react-router-dom';
 import './classMain.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchBlog } from '../../store/blogStore';
+import ClassForm from '../../components/classForm/ClassForm';
+import { handleOpenPayForm } from '../../store/dashStore';
 
 function ClassMain() {
     const blogClass = classes;
+    const dispatch = useDispatch();
+    const payForm = useSelector((state) => state.dashMenu.openPayForm)
 
     // Uncomment this line of code when you fix the bug from the api and the line of code above this message.
 
@@ -23,7 +27,7 @@ function ClassMain() {
                 <div className="blogs">
                     {
                         blogClass.map((blog) => (
-                            <Link to={`/classes/${blog._id}`} key={blog._id} className="blog_detail">
+                            <div key={blog._id} className="blog_detail">
                                 <div className="blog_img">
                                     <img src={blog.image} alt="" />
                                 </div>
@@ -32,12 +36,12 @@ function ClassMain() {
                                         <h3>{blog.title}</h3>
                                         <p>{blog.instructor} | {blog.date}</p>
                                     </div>
-                                    <div className="blog_blog">
+                                    <div onClick={() => dispatch(handleOpenPayForm())} className="blog_blog">
                                         <p>{blog.summary}</p>
                                         <button>Book Class</button>
                                     </div>
                                 </div>
-                            </Link>
+                            </div>
                         ))
                     }
                 </div>
@@ -71,6 +75,16 @@ function ClassMain() {
                     </div>
                 </div>
             </section>
+            
+            {
+                payForm && <ClassForm
+                    title='Testing'
+                    tutor='Testing'
+                    time='12:45pm'
+                    description='Testing to see if it works'
+                    price='20,000'
+                />
+            }
         </main>
     )
 }

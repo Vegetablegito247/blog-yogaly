@@ -7,7 +7,7 @@ import { fetchClass, postClass } from '../../store/classStore';
 
 function ClassForm() {
     const dispatch = useDispatch();
-    const [blogData, setBlogData] = useState({
+    const [classData, setClassData] = useState({
         title: '',
         time: '',
         description: '',
@@ -20,19 +20,19 @@ function ClassForm() {
     const validateForm = () => {
         const newError = {};
 
-        if (!blogData.title.trim()) {
+        if (!classData.title.trim()) {
             newError.title = 'Title is required';
         }
-        if (!blogData.time.trim()) {
+        if (!classData.time.trim()) {
             newError.time = 'time is required';
         }
-        if (!blogData.description.trim()) {
+        if (!classData.description.trim()) {
             newError.description = 'description is required';
         }
-        if (!blogData.tutor.trim()) {
+        if (!classData.tutor.trim()) {
             newError.tutor = 'tutor is required';
         }
-        if (!blogData.image) {
+        if (!classData.image) {
             newError.image = 'Image is required';
         }
 
@@ -44,12 +44,12 @@ function ClassForm() {
         const { name, value, files } = e.target;
 
         if (name === 'image') {
-            setBlogData((prevState) => ({
+            setClassData((prevState) => ({
                 ...prevState,
                 image: files[0]
             }))
         } else {
-            setBlogData((prevState) => ({
+            setClassData((prevState) => ({
                 ...prevState,
                 [name]: value
             }))
@@ -60,10 +60,18 @@ function ClassForm() {
         e.preventDefault();
 
         if(validateForm()) {
-            dispatch(postClass(blogData));
+            const formData = new FormData()
+
+            formData.append('title', classData.title);
+            formData.append('time', classData.time);
+            formData.append('description', classData.description);
+            formData.append('tutor', classData.tutor);
+            formData.append('image', classData.image);
+
+            dispatch(postClass(formData));
             dispatch(fetchClass())
 
-            setBlogData({
+            setClassData({
                 title: '',
                 time: '',
                 description: '',
@@ -86,7 +94,7 @@ function ClassForm() {
                         <input
                             type="text"
                             name="title"
-                            value={blogData.title}
+                            value={classData.title}
                             onChange={handleChange}
                             placeholder="Title"
                         />
@@ -96,7 +104,7 @@ function ClassForm() {
                     <div className="inp_ctrl">
                         <textarea
                             name="description"
-                            value={blogData.description}
+                            value={classData.description}
                             onChange={handleChange}
                             placeholder="description"
                         />
@@ -106,7 +114,7 @@ function ClassForm() {
                         <input
                             type="text"
                             name="tutor"
-                            value={blogData.tutor}
+                            value={classData.tutor}
                             onChange={handleChange}
                             placeholder="Tutor"
                         />
@@ -116,7 +124,7 @@ function ClassForm() {
                         <input
                             type='time'
                             name="time"
-                            value={blogData.time}
+                            value={classData.time}
                             onChange={handleChange}
                             placeholder="Time"
                         />
