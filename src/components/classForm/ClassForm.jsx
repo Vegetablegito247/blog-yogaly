@@ -90,6 +90,7 @@ function ClassForm({ title, tutor, time, description, price }) {
                 </div>
                 <div className='emailInp'>
                     <input onChange={handleChange} type="email" placeholder='Your email' value={email} />
+                    {error && <p className='err-msg'>{error}</p>}
                 </div>
                 <div className="class_btn">
                     <button onClick={placeOrder}>book class for ({price})</button>

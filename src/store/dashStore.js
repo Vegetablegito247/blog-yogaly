@@ -16,28 +16,35 @@ const dashSlice = createSlice({
                 state.openClassForm = false;
                 state.openSideMenu = false;
             }
-            state.openBlogForm = !state.openBlogForm;
+            else {
+                state.openBlogForm = true;
+            }
         },
         handleOpenClassForm: (state) => {
             if (state.openBlogForm || state.openSideMenu) {
                 state.openBlogForm = false;
                 state.openSideMenu = false;
             }
-            state.openClassForm = !state.openClassForm;
+            else {
+                state.openClassForm = true;
+            }
         },
         handleOpenPayForm: (state) => {
             if (state.openPayForm || state.openSideMenu) {
                 state.openPayForm = false;
                 state.openSideMenu = false;
+            } else {
+                state.openPayForm = true;
             }
-            state.openPayForm = !state.openPayForm;
         },
         handleDashSide: (state) => {
             if (state.openBlogForm || state.openClassForm) {
                 state.openBlogForm = false;
                 state.openClassForm = false;
             }
-            state.openSideMenu = !state.openSideMenu;
+            else {
+                state.openSideMenu = true;
+            }
         },
     }
 });
