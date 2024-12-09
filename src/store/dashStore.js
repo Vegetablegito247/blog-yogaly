@@ -12,8 +12,8 @@ const dashSlice = createSlice({
     initialState: initialState,
     reducers: {
         handleOpenBlogForm: (state) => {
-            if (state.openClassForm || state.openSideMenu) {
-                state.openClassForm = false;
+            if (state.openBlogForm || state.openSideMenu) {
+                state.openBlogForm = false;
                 state.openSideMenu = false;
             }
             else {
@@ -21,8 +21,8 @@ const dashSlice = createSlice({
             }
         },
         handleOpenClassForm: (state) => {
-            if (state.openBlogForm || state.openSideMenu) {
-                state.openBlogForm = false;
+            if (state.openClassForm || state.openSideMenu) {
+                state.openClassForm = false;
                 state.openSideMenu = false;
             }
             else {
