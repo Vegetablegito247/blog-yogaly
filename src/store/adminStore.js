@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const signup = createAsyncThunk('admin/signup', async (adminData) => {
     try {
-        const response = await axios.post(`http://localhost:8000/signup`, adminData);
+        const response = await axios.post(`http://yogaly-server.vercel.app/signup`, adminData);
         return response.data;
     } catch (error) {
         return error;
@@ -12,7 +12,7 @@ export const signup = createAsyncThunk('admin/signup', async (adminData) => {
 
 export const login = createAsyncThunk('admin/login', async (adminData) => {
     try {
-        const response = await axios.post(`http://localhost:8000/login`, adminData);
+        const response = await axios.post(`http://yogaly-server.vercel.app/login`, adminData);
         return response.data;
     } catch (error) {
         return error;
