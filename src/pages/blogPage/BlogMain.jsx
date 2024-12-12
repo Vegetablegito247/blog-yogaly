@@ -6,24 +6,19 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchBlog } from '../../store/blogStore';
 
 function BlogMain() {
-    const blog = blogs;
+    const blogs = useSelector((state) => state.blog.blog);
+    const dispatch = useDispatch();
 
-    // Uncomment this line of code when you fix the bug from the api and the line of code above this message. Then replace 'blog.map' with 'blogs.map'
-
-    // const blogs = useSelector((state) => state.blog.blog);
-
-    // const dispatch = useDispatch();
-
-    // useEffect(() => {
-    //     dispatch(fetchBlog());
-    // }, []);
+    useEffect(() => {
+        dispatch(fetchBlog());
+    }, []);
 
     return (
         <main>
             <section>
                 <div className="blogs">
                     {
-                        blog.map((blog) => (
+                        blogs.map((blog) => (
                             <Link to={`/messages/${blog._id}`} key={blog._id} className="blog_detail">
                                 <div className="blog_img">
                                     <img src={blog.image} alt="" />

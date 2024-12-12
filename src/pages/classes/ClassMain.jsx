@@ -3,24 +3,19 @@ import { classes } from '../../data/data';
 import { Link } from 'react-router-dom';
 import './classMain.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchBlog } from '../../store/blogStore';
+import { fetchClass } from '../../store/classStore';
 import ClassForm from '../../components/classForm/ClassForm';
 import { handleOpenPayForm } from '../../store/dashStore';
 
 function ClassMain() {
-    const blogClass = classes;
-    const dispatch = useDispatch();
     const payForm = useSelector((state) => state.dashMenu.openPayForm)
 
-    // Uncomment this line of code when you fix the bug from the api and the line of code above this message.
+    const blogClass = useSelector((state) => state.classes.class);
+    const dispatch = useDispatch()
 
-    // const blogClass = useSelector((state) => state.classes.class);
-
-    // const dispatch = useDispatch()
-
-    // useEffect(() => {
-    //     dispatch(fetchBlog());
-    // }, [])
+    useEffect(() => {
+        dispatch(fetchClass());
+    }, [])
     return (
         <main>
             <section>

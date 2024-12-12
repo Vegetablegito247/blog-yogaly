@@ -10,7 +10,7 @@ function BlogDetails({image, title, author, date, summary}) {
         <div className="blog_info">
             <div className="blog_title">
                 <h3>{title}</h3>
-                <span>{author} | {date}</span>
+                <span>{author} {date}</span>
             </div>
             <div className="blog_summary">
                 <p>{summary}</p>
