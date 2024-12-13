@@ -38,7 +38,7 @@ function ClassForm({ title, tutor, time, description, price }) {
     const config = {
         reference: (new Date()).getTime().toString(),
         email: email,
-        amount: 20000 * 100, //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
+        amount: price * 100, //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
         publicKey: 'pk_test_8b50893a5891d0e9440ac570f6c142448d2161e3',
     };
 

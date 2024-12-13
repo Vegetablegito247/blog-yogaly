@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { blogs } from '../../data/data';
 import './blogMain.css';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchBlog } from '../../store/blogStore';
 
@@ -19,14 +19,14 @@ function BlogMain() {
                 <div className="blogs">
                     {
                         blogs.map((blog) => (
-                            <Link to={`/messages/${blog._id}`} key={blog._id} className="blog_detail">
+                            <Link to={`/blog/${blog._id}`} key={blog._id} className="blog_detail">
                                 <div className="blog_img">
                                     <img src={blog.image} alt="" />
                                 </div>
                                 <div className="blog_info">
                                     <div className="blog_info_head">
                                         <h3>{blog.title}</h3>
-                                        <p>{blog.author} | {blog.date}</p>
+                                        <p>{blog.author} {blog.date}</p>
                                     </div>
                                     <div className="blog_blog">
                                         <p>{blog.summary}</p>

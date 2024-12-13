@@ -20,19 +20,19 @@ function BlogView() {
         <>
             <Navbar />
             <header className='view_header'>
-                <img src={blogDetails.image} alt="" />
+                <img src={blogDetails.data.image} alt="" />
             </header>
             <main>
                 <section>
                     <div className='view_title'>
-                        <h1>{blogDetails.title}</h1>
+                        <h1>{blogDetails.data.title}</h1>
                         <div className='view_author'>
-                            <span>{blogDetails.author}</span>
+                            <span>{blogDetails.data.author}</span>
                             <span>2mins read</span>
                         </div>
                     </div>
                     <div className='view_content'>
-                        <p>{blogDetails.content}</p>
+                        <p>{blogDetails.data.content}</p>
                     </div>
                 </section>
             </main>

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { classes } from '../../data/data';
 import { Link } from 'react-router-dom';
 import './classMain.css';
@@ -12,6 +12,16 @@ function ClassMain() {
 
     const blogClass = useSelector((state) => state.classes.class);
     const dispatch = useDispatch()
+
+    const [classDetail, setClassDetail] = useState({})
+    const getData = (id) => {
+        const data = blogClass.find((item) => item._id === id)
+
+        if(data){
+            setClassDetail(data)
+            dispatch(handleOpenPayForm())
+        }
+    }
 
     useEffect(() => {
         dispatch(fetchClass());
@@ -29,9 +39,9 @@ function ClassMain() {
                                 <div className="blog_info">
                                     <div className="blog_info_head">
                                         <h3>{blog.title}</h3>
-                                        <p>{blog.instructor} | {blog.date}</p>
+                                        <p>{blog.tutor} | {blog.time}</p>
                                     </div>
-                                    <div onClick={() => dispatch(handleOpenPayForm())} className="blog_blog">
+                                    <div onClick={() => getData(blog._id)} className="blog_blog">
                                         <p>{blog.summary}</p>
                                         <button>Book Class</button>
                                     </div>
@@ -73,11 +83,11 @@ function ClassMain() {
             
             {
                 payForm && <ClassForm
-                    title='Testing'
-                    tutor='Testing'
-                    time='12:45pm'
-                    description='Testing to see if it works'
-                    price='20,000'
+                    title={classDetail.title}
+                    tutor={classDetail.tutor}
+                    time={classDetail.time}
+                    description={classDetail.description}
+                    price={classDetail.price}
                 />
             }
         </main>

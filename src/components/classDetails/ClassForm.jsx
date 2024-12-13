@@ -12,6 +12,7 @@ function ClassForm() {
         time: '',
         description: '',
         tutor: '',
+        price: '',
         image: null
     });
 
@@ -31,6 +32,9 @@ function ClassForm() {
         }
         if (!classData.tutor.trim()) {
             newError.tutor = 'tutor is required';
+        }
+        if (!classData.price.trim()) {
+            newError.price = 'price is required';
         }
         if (!classData.image) {
             newError.image = 'Image is required';
@@ -59,13 +63,14 @@ function ClassForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if(validateForm()) {
+        if (validateForm()) {
             const formData = new FormData()
 
             formData.append('title', classData.title);
             formData.append('time', classData.time);
             formData.append('description', classData.description);
             formData.append('tutor', classData.tutor);
+            formData.append('price', classData.price);
             formData.append('image', classData.image);
 
             dispatch(postClass(formData));
@@ -76,6 +81,7 @@ function ClassForm() {
                 time: '',
                 description: '',
                 tutor: '',
+                price: '',
                 image: null
             });
 
@@ -129,7 +135,16 @@ function ClassForm() {
                             placeholder="Time"
                         />
                         {error.time && <span className='err_msg'>{error.time}</span>}
-
+                    </div>
+                    <div className="inp_ctrl">
+                        <input
+                            type='text'
+                            name="price"
+                            value={classData.price}
+                            onChange={handleChange}
+                            placeholder="Price"
+                        />
+                        {error.price && <span className='err_msg'>{error.price}</span>}
                     </div>
                     <div className="inp_ctrl">
                         <input

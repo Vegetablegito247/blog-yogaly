@@ -25,9 +25,8 @@ function App() {
           <Route path="/" element={<LandPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/instructors" element={<InstructorPage />} />
-          <Route path="/blog" element={<BlogPage />}>
-            <Route path=":id" element={<BlogView />} />
-          </Route>
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="blog/:id" element={<BlogView />} />
           <Route path="/classes" element={<ClassPage />} />
           <Route path="dashboard" element={<DisplayDashboard />}>
             <Route index element={<OverviewPage />} />
